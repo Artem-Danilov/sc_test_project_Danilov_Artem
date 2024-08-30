@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style_tablet.css">
+	<link rel="stylesheet" href="css/style_mobail.css">
+	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="icon" type="imges/png" sizes="256x256" href="image/logo.png">
+	<title>ToDo List Scloud</title>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+
+	<div class="container">
+		
+		<div class="block1">
+			<h1 class="heading">ToDo List Scloud</h1>
+			<div class="content_block1">
+				<div class="left_content">
+					<h2 class="heading_task">Текущие задачи</h2>
+
+					<div class="tasks_status">
+						<div class="tasks_status_information">
+							<img src="image/icon1.png" alt="information icon" class="icon">
+							<p class="text_current_tasks" id="count_open">Открыто - 0</p>
+						</div>
+
+						<div class="tasks_status_information"> 
+							<img src="image/icon2.png" alt="information icon" class="icon">
+							<p class="text_current_tasks" id="count_in_progress">В работе - 0</p>
+						</div>
+
+						<div class="tasks_status_information">
+							<img src="image/icon3.png" alt="information icon" class="icon">
+							<p class="text_current_tasks" id="count_closed">Закрыто - 0</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="right_content">
+					<h2 class="heading_task">Добавить задачу</h2>
+
+					<form action="vender/add_task.php" method="POST">
+					<div class="add_task_form">
+						<button class="btn_add"><img src="image/btn_add.png" alt="button add task" class="img_btn_add"></button>
+							<button class="btn_add_mobail">Добавить задачу</button>
+						<div class="input_container">
+							<input type="text" id="task" name="task" class="input_text_add_task" required placeholder="Текст">
+							<span class="clear_button">&times;</span>
+						</div>
+					</div>
+					</form>
+				</div>
+			</div>
+		
+
+		<div class="block_satatus">
+
+			<h2 class="heading_task_blok">Задачи</h2>
+			<h2 class="heading_status_blok">Статус</h2>
+
+			<div class="task_status" id="task_list">
+				<p class="text_task_staus"></p>
+				<button class="btn_status_for_task"></button>
+			</div>
+		</div>
+
+			<button class="see_more">Показать еще<img src="image/check_mark.png" class="img_check_mark" alt="Button check mark"></button>
+		</div>
+
+		<div class="block2">
+			<div class="contetn_block2">
+				<h2 class="heading_the_task_board">Доска задач</h1>
+
+						<div class="heading_block">
+							<h3>Открыто</h3>
+							<h3>В работе</h3>
+							<h3>Закрыто</h3>
+						</div>
+
+					<div class="board">
+						<div class="column" id="open">
+							<div class="task_open"></div>
+						</div>
+						<div class="column" id="in_progress">
+							<div class="task_at_work"></div>
+						</div>
+						<div class="column" id="closed">
+							<div class="task_close"></div>
+							</div>
+						</div>
+				</div>
+			</div>
+
+			<div id="overlay" class="overlay"></div>
+
+	<div id="popup" class="popup">
+		<h2 class="heading_popup">Изменение задачи</h2>
+		<span class="btn_back">&times;</span>
+		<textarea name="task" id="popup_task"></textarea>
+		<hr>
+		<div class="block_btn_sattus">
+			<button class="btn_status" id="btn_status_open" data-status-id="1">Переоткрыть</button>
+			<button class="btn_status" id="btn_status_at_work" data-status-id="2">В работу</button>
+			<button class="btn_status" id="btn_status_close" data-status-id="3">Закрыть</button>
+		</div>
+		<div class="block_bt_popup">
+			<button class="btn_applay">Применить</button>
+			<button class="btn_delete">Удалить задачу</button>
+		</div>
+	</div>
+
+	<footer></footer>
+</div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
